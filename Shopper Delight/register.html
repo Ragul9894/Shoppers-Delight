@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+        <link rel="stylesheet" href="register.css">   
+
+        <script>
+            function validateForm()
+        {
+            var fn=document.forms["regform"]["firstname"].value;
+            var ln=document.forms["regform"]["lastname"].value;
+            var gn=document.forms["regform"]["country"];
+            var ctry=document.forms["regform"]["country"];
+
+            if(fn==null||fn=="")
+            {
+                alert("First name cannot be blank");
+                return false;
+
+            }
+            else if(ln==null||ln=="")
+            {
+                alert("Last name cannot be blank");
+                return false;
+            }
+            else if((gn[0].checked==false)&&(gn[1].checked==false))
+            {
+                alert("please enter your Gender");
+                return false;
+            }
+            else if(ctry.selectIndex==0)
+            {
+                alert("Enter your Country");
+                return false;
+                
+            }
+        }
+        </script>
+                 </head>
+<body>
+  <div class="header"><h1>New User Signup</h1></div>  
+    <div>
+        <form name="regform" method="post" onsubmit="validateForm()">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Enter First Name">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Enter Last Name">
+<label>Gender</label> <br/><input type="radio" id="male" value="male">
+<label for="male">Male</label>
+<input type="radio" id="female" value="female">
+<label for="female">Female</label><br/>
+<label for="country">Country</label>
+<select id="country" name="country">
+    <option value="select">Select Country</option>
+    <option value="usa">USA</option>
+    <option value="india">INDIA</option>
+    <option value="japan">JAPAN</option>
+
+    <input type="submit" value="Submit">
+
+
+</form>    
+</div>
+</body>
+</html>
